@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Total</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" *ngFor="let good of cart; index as i">1</th>
+        <td>{{good.name}}</td>
+        <td>{{good.price}}</td>
+        <td>{{good.amount}}</td>
+        <td>{{good.price * good.amount | currency}}</td>
+        <td>
+            <button class="btn btn-primary">check out</button>
+            <button class="btn btn-danger">delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
