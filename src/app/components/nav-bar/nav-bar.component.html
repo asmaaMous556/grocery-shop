@@ -15,18 +15,24 @@
         <li class="nav-item">
           <a class="nav-link"  routerLink="/cart">Cart</a>
         </li>
-        
+
+     
+      
+      
+        <li class="nav-item" *ngIf="isUser ; else notUser">
+             <button  class="btn btn-light" (click)="logout()">Log out</button>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" > Hello {{userName}} !</a>
+          </li>
+          
+        <ng-template  #notUser>  
       <div class="auth" >
-        <li class="nav-item" *ngIf="!isUser ; else notUser">
+        <li class="nav-item" >
           <a class="btn btn-primary"  (click)="loginWithGoogle()" >Log in with Google</a>
         </li>
       </div>
-      
-      <ng-template #notUser>
-        <li class="nav-item" >
-             <button  class="btn btn-light" (click)="logout()">Log out</button>
-          </li>
-        </ng-template>
+    </ng-template>
       </ul>
     </div>
   </nav>

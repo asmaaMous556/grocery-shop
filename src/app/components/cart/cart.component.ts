@@ -14,7 +14,8 @@ cart:product[]=[];
   constructor(private cartservice:CartService) { }
 
   ngOnInit(): void {
-    this.cartservice.getCart().subscribe(cart=>
+    this.cartservice.getCart().subscribe(cart=>{
+      console.log(cart);
       this.cart=cart.map(product=>{
         return {
           id:product.payload.doc.id,
@@ -25,6 +26,6 @@ cart:product[]=[];
 
         }
       })
-      )}
+    })}
 
 }

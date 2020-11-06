@@ -10,12 +10,12 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row" *ngFor="let good of cart; index as i">1</th>
-        <td>{{good.name}}</td>
+        <th scope="row" *ngFor="let good of cart ; index as i"></th>
+        <!-- <td>{{good.name}}</td>
         <td>{{good.price}}</td>
         <td>{{good.amount}}</td>
-        <td>{{good.price * good.amount | currency}}</td>
-        <td>
+        <td>{{good.price * good.amount | currency}}</td> -->
+        <td> 
             <button class="btn btn-primary">check out</button>
             <button class="btn btn-danger">delete</button>
         </td>

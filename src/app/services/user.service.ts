@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class UserService {
 
-  constructor(private afStore :AngularFirestore,private authService:AuthService) { }
+  constructor(private afStore :AngularFirestore) { }
   
   // save(user:firebase.User){
 
@@ -18,6 +18,15 @@ export class UserService {
   //     email:user.email
   //   })
   //     }
+
+  addNewUser(user:firebase.User){
+   return this.afStore.doc('users/'+user.uid).set({
+      id:user.uid,
+      name:user.displayName,
+      email:user.email
+    })
+
+  }
 
   get (uid:string){
     return this.afStore.doc('/users/'+uid).valueChanges();
