@@ -4,17 +4,22 @@
         <th scope="col">Name</th>
         <th scope="col">Price</th>
         <th scope="col">Amount</th>
+        <th scope="col">imageUrl</th>
         <th scope="col">Total</th>
         <th scope="col">Options</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row" *ngFor="let good of cart ; index as i"></th>
-        <!-- <td>{{good.name}}</td>
-        <td>{{good.price}}</td>
-        <td>{{good.amount}}</td>
-        <td>{{good.price * good.amount | currency}}</td> -->
+      <tr *ngFor="let product of cart ">    
+        <td>{{product.name | titlecase}}</td>
+        <td>{{product.price}}</td>
+        <td>
+          <input type="number" placeholder="Amount (kg)" name="amount" [(ngModel)]="product.amount">
+        </td>
+        <td>
+          <img class="img-thumbnail" [src]="product.imageUrl">
+        </td>
+        <td>{{product.price * product.amount | currency}}</td>
         <td> 
             <button class="btn btn-primary">check out</button>
             <button class="btn btn-danger">delete</button>

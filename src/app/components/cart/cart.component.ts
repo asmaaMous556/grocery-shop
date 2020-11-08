@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { product} from 'src/app/models/products';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -14,18 +15,19 @@ cart:product[]=[];
   constructor(private cartservice:CartService) { }
 
   ngOnInit(): void {
-    this.cartservice.getCart().subscribe(cart=>{
-      console.log(cart);
-      this.cart=cart.map(product=>{
-        return {
-          id:product.payload.doc.id,
+    
+    this.cartservice.getCart().subscribe(cart=> {
+      this.cart=cart.map( product=>{
+      return {  
+        id:product.payload.doc.id,
           amount:product.payload.doc.data()['amount'],
           price:product.payload.doc.data()['price'],
           name:product.payload.doc.data()['name'],
           imageUrl:product.payload.doc.data()['imageUrl'],
 
-        }
+        } 
       })
+       console.log(this.cart)
     })}
 
 }

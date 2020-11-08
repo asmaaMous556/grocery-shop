@@ -9,29 +9,27 @@
           <a class="nav-link" routerLink="/" roterLinkActive="active" >Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="/admin/goods">Dashboard</a>
+          <a class="nav-link" routerLink="/admin/goods">Dashboard</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link"  routerLink="/cart">Cart</a>
-        </li>
-
-     
       
-      
-        <li class="nav-item" *ngIf="isUser ; else notUser">
-             <button  class="btn btn-light" (click)="logout()">Log out</button>
+        <li class="nav-item" *ngIf="!isUser ; else notUser">
+            <a class="btn btn-primary"  (click)="loginWithGoogle()" >Log in with Google</a>
           </li>
-          <li class="nav-item" >
-            <a class="nav-link" > Hello {{userName}} !</a>
-          </li>
-          
-        <ng-template  #notUser>  
-      <div class="auth" >
-        <li class="nav-item" >
-          <a class="btn btn-primary"  (click)="loginWithGoogle()" >Log in with Google</a>
+         
+      <ng-template  #notUser>  
+        <ul class="navbar-nav">
+        
+        <li ngbDropdown class="nav-item dropdown">
+          <a class="btn btn-light" ngbDropdownToggle class="nav-link dropdown-toggle" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > 
+            Hello {{userName}} !</a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item"  routerLink="/cart">Cart</a>
+              <button  class="dropdown-item"(click)="logout()">Log out</button>
+            </div> 
         </li>
-      </div>
+        </ul>
+       
     </ng-template>
       </ul>
     </div>

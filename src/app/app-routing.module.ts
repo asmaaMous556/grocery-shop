@@ -3,16 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
 import { GoodsComponent } from './components/goods/goods.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'login',component:LoginComponent},
   {path:'sign-up',component:SignUpComponent},
-  {path:'cart',component:CartComponent},
+  {path:'cart',component:CartComponent,canActivate :[AuthGuardService]},
   {path:'admin/goods',component:GoodsComponent},
   {path:'**',component:NotFoundComponent}
 ];
