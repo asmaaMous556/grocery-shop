@@ -1,0 +1,76 @@
+[debug] [2020-11-08T17:52:16.723Z] ----------------------------------------------------------------------
+[debug] [2020-11-08T17:52:16.729Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asmaa Mostafa\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-11-08T17:52:16.730Z] CLI Version:   8.4.3
+[debug] [2020-11-08T17:52:16.730Z] Platform:      win32
+[debug] [2020-11-08T17:52:16.731Z] Node Version:  v12.13.1
+[debug] [2020-11-08T17:52:16.734Z] Time:          Sun Nov 08 2020 19:52:16 GMT+0200 (Eastern European Standard Time)
+[debug] [2020-11-08T17:52:16.736Z] ----------------------------------------------------------------------
+[debug] [2020-11-08T17:52:16.736Z] 
+[debug] [2020-11-08T17:52:16.760Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-08T17:52:16.763Z] > authorizing via signed-in user
+[debug] [2020-11-08T17:52:16.764Z] [iam] checking project gshop-6aa12 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-11-08T17:52:16.775Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gshop-6aa12:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-11-08T17:52:17.682Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 08 Nov 2020 17:52:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=633","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-08T17:52:17.690Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/gshop-6aa12  
+ 
+[debug] [2020-11-08T17:52:18.698Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 08 Nov 2020 17:52:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'gshop-6aa12'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-11-08T17:52:18.715Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gshop-6aa12/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-11-08T17:52:21.442Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 08 Nov 2020 17:52:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gshop-6aa12]: beginning deploy... 
+[info] i  hosting[gshop-6aa12]: found 12 files in dist/grocery-shop 
+[debug] [2020-11-08T17:52:21.509Z] [hosting] hash cache [ZGlzdFxncm9jZXJ5LXNob3A] not populated
+[debug] [2020-11-08T17:52:21.808Z] [hosting] hash cache [ZGlzdFxncm9jZXJ5LXNob3A] stored for 12 files
+[debug] [2020-11-08T17:52:21.809Z] [hosting][hash queue][FINAL] {"max":261,"min":52,"avg":95.08333333333333,"active":0,"complete":12,"success":12,"errored":0,"retried":0,"total":12,"elapsed":297}
+[debug] [2020-11-08T17:52:21.810Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gshop-6aa12/versions/b16831601b631940:populateFiles  
+ <request body omitted>
+[debug] [2020-11-08T17:52:24.005Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 08 Nov 2020 17:52:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-08T17:52:24.027Z] [hosting][populate queue][FINAL] {"max":2207,"min":2207,"avg":2207,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2225}
+[debug] [2020-11-08T17:52:24.028Z] [hosting] uploads queued: 11
+[debug] [2020-11-08T17:53:31.447Z] [hosting][upload queue][FINAL] {"max":67439,"min":2414,"avg":12847.90909090909,"active":0,"complete":11,"success":11,"errored":0,"retried":0,"total":11,"elapsed":67441}
+[info] +  hosting[gshop-6aa12]: file upload complete 
+[debug] [2020-11-08T17:53:31.463Z] [hosting] deploy completed after 70017ms
+[debug] [2020-11-08T17:53:31.732Z] [
+  {
+    "config": {
+      "public": "dist/grocery-shop",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "gshop-6aa12"
+    },
+    "site": "gshop-6aa12",
+    "version": "sites/gshop-6aa12/versions/b16831601b631940"
+  }
+]
+[info] i  hosting[gshop-6aa12]: finalizing version... 
+[debug] [2020-11-08T17:53:31.735Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/gshop-6aa12/versions/b16831601b631940?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2020-11-08T17:53:34.186Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 08 Nov 2020 17:53:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-08T17:53:34.187Z] [hosting] finalized version for gshop-6aa12: {"name":"sites/gshop-6aa12/versions/b16831601b631940","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2020-11-08T17:52:20.253189Z","createUser":{"email":"asmaamosmoh@gmail.com"},"finalizeTime":"2020-11-08T17:53:34.280999Z","finalizeUser":{"email":"asmaamosmoh@gmail.com"}}
+[info] +  hosting[gshop-6aa12]: version finalized 
+[info] i  hosting[gshop-6aa12]: releasing new version... 
+[debug] [2020-11-08T17:53:34.200Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gshop-6aa12/releases?version_name=sites/gshop-6aa12/versions/b16831601b631940  
+ {"message":null}
+[debug] [2020-11-08T17:53:47.379Z] Error: socket hang up
+    at connResetException (internal/errors.js:570:14)
+    at TLSSocket.socketOnEnd (_http_client.js:440:23)
+    at TLSSocket.emit (events.js:215:7)
+    at TLSSocket.EventEmitter.emit (domain.js:475:20)
+    at endReadableNT (_stream_readable.js:1184:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: Server Error. socket hang up

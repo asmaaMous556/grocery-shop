@@ -30,10 +30,10 @@ export class AuthService {
 }
 
 
-get AppUser(){
+get AppUser():Observable<user>{
 return this.user.pipe(switchMap(user=> // switchMap:emitting values only from the most recently projected Observable.
  {
-   return this.userService.get(user.uid);
+   return this.userService.getUser(user.uid);
  }))
 }
 

@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class UserService {
-
+user:user;
   constructor(private afStore :AngularFirestore) { }
   
   // save(user:firebase.User){
@@ -23,12 +23,13 @@ export class UserService {
    return this.afStore.doc('users/'+user.uid).set({
       id:user.uid,
       name:user.displayName,
-      email:user.email
+      email:user.email,
+      isAdmin:this.user.isAdmin
     })
 
   }
 
-  get (uid:string){
-    return this.afStore.doc('/users/'+uid).valueChanges();
+  getUser(uid:string):Observable<user>{
+    return this.afStore.doc<user>('/users/'+uid).valueChanges();
   }
 }

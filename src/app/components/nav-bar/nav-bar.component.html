@@ -9,7 +9,7 @@
           <a class="nav-link" routerLink="/" roterLinkActive="active" >Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin/goods">Dashboard</a>
+          <a class="nav-link" *ngIf="isAdmin===true" routerLink="/admin/goods">Dashboard</a>
         </li>
 
       
@@ -25,7 +25,8 @@
             Hello {{userName}} !</a>
             <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item"  routerLink="/cart">Cart</a>
-              <button  class="dropdown-item"(click)="logout()">Log out</button>
+              <button class="btn btn-light" 
+               class="dropdown-item"(click)="logout()">Log out</button>
             </div> 
         </li>
         </ul>
